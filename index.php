@@ -62,12 +62,10 @@
             <?php
             $recentPosts = new WP_Query(
                 [
-                    'category_name'  => 'actualites-de-la-sss',
+                    'category_name'  => $_GET['cat'],
                     'posts_per_page' => 7
                 ]
             );
-            // $recentPosts->query('showposts=18');
-            // TODO: faire le filtre et ajouter le lien dans les vignettes de catégories
 
             function tn_custom_excerpt_length($length)
             {
