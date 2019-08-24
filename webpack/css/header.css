@@ -39,7 +39,7 @@ body #container header nav {
       z-index: 100;
       padding: 15px; }
       body #container header nav ul li.menu-item:hover {
-        background-color: #F28C0E; }
+        background-color: #fc9218; }
       body #container header nav ul li.menu-item.menu-item-has-children::after {
         content: "expand_more";
         margin-right: 15px;
@@ -105,17 +105,17 @@ body #container header section#title {
       transform: rotate(77.48deg);
       position: absolute; }
     body #container header section#title section:nth-child(2) #orange__circle {
-      background-color: #F28C0E;
+      background-color: #fc9218;
       width: 464.92px;
       height: 494px;
       top: 10px; }
     body #container header section#title section:nth-child(2) #yellow__circle {
-      background-color: #F2E207;
+      background-color: #fff100;
       width: 432.65px;
       height: 470px;
       top: 20px; }
     body #container header section#title section:nth-child(2) #green__circle {
-      background-color: #B3D962;
+      background-color: #c7dd54;
       width: 402.99px;
       height: 448px;
       top: 29px; }
@@ -125,7 +125,7 @@ body #container header section#title {
       border-radius: 50%;
       transform: rotate(0);
       top: 64px;
-      background-image: url("../assets/beatus.jpg");
+      background-image: url("../assets/logo_carre.png");
       background-position-x: center;
       background-position-y: top;
       background-size: 100%;
