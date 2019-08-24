@@ -34,7 +34,19 @@ body #container header nav {
     justify-content: space-between;
     padding: 0 150px; }
     body #container header nav ul li.menu-item {
-      list-style: none; }
+      list-style: none;
+      line-height: 59px;
+      z-index: 100;
+      padding: 15px; }
+      body #container header nav ul li.menu-item:hover {
+        background-color: #F28C0E; }
+      body #container header nav ul li.menu-item.menu-item-has-children::after {
+        content: "expand_more";
+        margin-right: 15px;
+        font-family: "Material Icons", serif;
+        color: white;
+        font-weight: bold;
+        font-size: 12px; }
       body #container header nav ul li.menu-item a {
         font-weight: bold;
         font-size: 12px;
@@ -50,10 +62,23 @@ body #container header nav {
         display: none;
         width: auto; }
         body #container header nav ul li.menu-item ul.sub-menu li.menu-item {
-          padding: 15px 0; }
-          body #container header nav ul li.menu-item ul.sub-menu li.menu-item ul.sub-menu {
+          position: relative;
+          line-height: normal; }
+          body #container header nav ul li.menu-item ul.sub-menu li.menu-item.menu-item-has-children::after {
+            content: "chevron_right";
+            margin-right: 15px;
+            font-family: "Material Icons", serif;
+            color: white;
+            font-weight: bold;
+            font-size: 12px; }
+          body #container header nav ul li.menu-item ul.sub-menu li.menu-item.menu-item-has-children ul.sub-menu {
             position: absolute;
-            right: 0; }
+            display: none;
+            left: 100%;
+            top: 0;
+            width: 200px; }
+          body #container header nav ul li.menu-item ul.sub-menu li.menu-item.menu-item-has-children:hover ul.sub-menu {
+            display: block; }
       body #container header nav ul li.menu-item:hover ul.sub-menu {
         display: block; }
 body #container header section#title {

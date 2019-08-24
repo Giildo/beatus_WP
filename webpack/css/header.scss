@@ -1,4 +1,5 @@
 @import "assets/colors";
+@import "assets/fonts";
 
 $fontSize: 12px;
 $rotation: 77.48deg;
@@ -59,6 +60,24 @@ body {
 
           li.menu-item {
             list-style: none;
+            line-height: 59px;
+            z-index: 100;
+            padding: 15px;
+
+            &:hover {
+              background-color: $orangeLight;
+            }
+
+            &.menu-item-has-children {
+              &::after {
+                content: "expand_more";
+                margin-right: 15px;
+                font-family: "Material Icons", serif;
+                color: white;
+                font-weight: bold;
+                font-size: 12px;
+              }
+            }
 
             a {
               font-weight: bold;
@@ -78,11 +97,30 @@ body {
               width: auto;
 
               li.menu-item {
-                padding: 15px 0;
+                position: relative;
+                line-height: normal;
 
-                ul.sub-menu {
-                  position: absolute;
-                  right: 0;
+                &.menu-item-has-children {
+                  &::after {
+                    content: "chevron_right";
+                    margin-right: 15px;
+                    font-family: "Material Icons", serif;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 12px;
+                  }
+
+                  ul.sub-menu {
+                    position: absolute;
+                    display: none;
+                    left: 100%;
+                    top: 0;
+                    width: 200px;
+                  }
+
+                  &:hover ul.sub-menu {
+                    display: block;
+                  }
                 }
               }
             }
