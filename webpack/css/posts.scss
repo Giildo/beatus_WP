@@ -8,18 +8,61 @@ body {
 
       #display__filters__button {
         position: absolute;
-        border: none;
         right: 0;
-        background-color: white;
-        font-size: 18px;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-        margin-top: 10px;
+        top: 7px;
+        border: none;
+        font-size: 14px;
+        color: $orange;
+        padding: 10px 21px 10px 10px;
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:focus {
           outline: none;
+        }
+
+        i {
+          &.material-icons {
+            font-size: 16px;
+            margin-left: 5px;
+            position: absolute;
+            right: 0;
+          }
+        }
+
+        &:not(.active) {
+          i {
+            &#filter__icon__clear {
+              color: rgba(204, 69, 0, 0);
+              transform: rotateZ(0);
+              transition: color 0.2s ease-out, transform 0.2s ease-out;
+            }
+
+            &#filter__icon__tune {
+              color: rgba(204, 69, 0, 1);
+              transform: rotateZ(0);
+              transition: color 0.2s ease-out, transform 0.2s ease-out;
+            }
+          }
+        }
+
+        &.active {
+          i {
+            &#filter__icon__clear {
+              color: rgba(204, 69, 0, 1);
+              transform: rotateZ(180deg);
+              transition: color 0.2s ease-out, transform 0.2s ease-out;
+            }
+
+            &#filter__icon__tune {
+              color: rgba(204, 69, 0, 0);
+              transform: rotateZ(180deg);
+              transition: color 0.2s ease-out, transform 0.2s ease-out;
+            }
+          }
         }
       }
 

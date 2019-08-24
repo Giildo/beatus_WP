@@ -2,17 +2,40 @@ body #container #posts {
   position: relative; }
   body #container #posts #display__filters__button {
     position: absolute;
-    border: none;
     right: 0;
-    background-color: white;
-    font-size: 18px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 10px;
-    cursor: pointer; }
+    top: 7px;
+    border: none;
+    font-size: 14px;
+    color: #CC4500;
+    padding: 10px 21px 10px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     body #container #posts #display__filters__button:focus {
       outline: none; }
+    body #container #posts #display__filters__button i.material-icons {
+      font-size: 16px;
+      margin-left: 5px;
+      position: absolute;
+      right: 0; }
+    body #container #posts #display__filters__button:not(.active) i#filter__icon__clear {
+      color: rgba(204, 69, 0, 0);
+      transform: rotateZ(0);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+    body #container #posts #display__filters__button:not(.active) i#filter__icon__tune {
+      color: #cc4500;
+      transform: rotateZ(0);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+    body #container #posts #display__filters__button.active i#filter__icon__clear {
+      color: #cc4500;
+      transform: rotateZ(180deg);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+    body #container #posts #display__filters__button.active i#filter__icon__tune {
+      color: rgba(204, 69, 0, 0);
+      transform: rotateZ(180deg);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
   body #container #posts header h2 {
     font-weight: bold;
     font-size: 48px;

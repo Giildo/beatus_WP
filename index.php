@@ -56,7 +56,11 @@
     </nav>
 
     <section id="posts">
-        <button id="display__filters__button">Filtrer +</button>
+        <button id="display__filters__button">
+            Filtrer
+            <i id="filter__icon__tune" class="material-icons">tune</i>
+            <i id="filter__icon__clear" class="material-icons">clear</i>
+        </button>
         <header>
             <h2>Quoi de neuf au collège ?</h2>
 
@@ -182,7 +186,6 @@ coll.addEventListener('click', function () {
   let content = document.getElementById('post__categories__filters');
   this.classList.toggle('active');
 
-  this.classList.contains('active') ? this.textContent = 'Filtrer -' : this.textContent = 'Filtrer +';
   content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px';
 })
 </script>
