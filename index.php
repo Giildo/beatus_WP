@@ -60,6 +60,7 @@
 
         <div id="posts__cards">
             <?php
+            $homeID = get_the_ID();
             $recentPosts = new WP_Query(
                 [
                     'category_name'  => $_GET['cat'],
@@ -95,7 +96,9 @@
                         foreach ($cats as $cat) : ?>
                             <div class="post__card__category_thumbnail"
                                  style="background-color: <?= get_term_meta($cat->term_id, 'cc_color', true) ?>">
-                                <?= $cat->name; ?>
+                                <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
+                                    <?= $cat->name; ?>
+                                </a>
                             </div>
                         <?php endforeach; ?>
                     </header>
