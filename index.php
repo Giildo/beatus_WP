@@ -60,8 +60,13 @@
 
         <div id="posts__cards">
             <?php
-            $recentPosts = new WP_Query();
-            $recentPosts->query('showposts=8');
+            $recentPosts = new WP_Query(
+                [
+                    'category_name'  => 'actualites-de-la-sss',
+                    'posts_per_page' => 7
+                ]
+            );
+            // $recentPosts->query('showposts=18');
             // TODO: faire le filtre et ajouter le lien dans les vignettes de catégories
 
             function tn_custom_excerpt_length($length)
@@ -80,10 +85,12 @@
             ?>
             <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
                 <div class="post__card">
-                    <header>
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail([9999, 200]); ?>
-                        </a>
+                    <header style="
+                            background-image: url(<?= get_the_post_thumbnail_url(); ?>);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            ">
+                        <a href="<?php the_permalink(); ?>"></a>
 
                         <?php
                         $cats = get_the_category();

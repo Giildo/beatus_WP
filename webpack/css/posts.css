@@ -17,8 +17,10 @@ body #container #posts #posts__cards {
       height: 200px;
       margin-bottom: 5px;
       position: relative; }
-      body #container #posts #posts__cards .post__card header img {
-        width: 100% !important; }
+      body #container #posts #posts__cards .post__card header a {
+        display: block;
+        width: 100%;
+        height: 100%; }
       body #container #posts #posts__cards .post__card header .post__card__category_thumbnail {
         position: absolute;
         top: 8px;
@@ -31,6 +33,8 @@ body #container #posts #posts__cards {
         font-size: 14px;
         text-decoration: none;
         color: black; }
+    body #container #posts #posts__cards .post__card:first-child {
+      grid-column: 1/3; }
     body #container #posts #posts__cards .post__card section {
       width: 100%;
       padding: 0 15px 50px 15px;
