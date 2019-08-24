@@ -56,7 +56,27 @@
     </nav>
 
     <section id="posts">
-        <h2>Quoi de neuf au collège ?</h2>
+        <header>
+            <h2>Quoi de neuf au collège ?</h2>
+
+            <div id="post__categories__filters">
+                <?php
+                // Activer si on souhaite afficher les catégories vides.
+                // $args = ['hide_empty' => false];
+                $args = [];
+
+                $categories = get_categories($args);
+                foreach ($categories as $category) :?>
+                    <div class="post__category__filter"
+                         style="background-color: <?= get_term_meta($category->term_id, 'cc_color',
+                                                                    true) ?>">
+                        <a href="<?= get_page_link($homeID) . '?cat=' . $category->slug; ?>">
+                            <?= $category->name; ?>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </header>
 
         <div id="posts__cards">
             <?php
@@ -84,36 +104,38 @@
             ?>
             <?php
             if ($recentPosts->post_count !== 0) :
-            while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
-                <div class="post__card">
-                    <header style="
-                            background-image: url(<?= get_the_post_thumbnail_url(); ?>);
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            ">
-                        <a href="<?php the_permalink(); ?>"></a>
+                while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                    <div class="post__card">
+                        <header style="
+                                background-image: url(<?= get_the_post_thumbnail_url(); ?>);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center;
+                                ">
+                            <a href="<?php the_permalink(); ?>"></a>
 
-                        <?php
-                        $cats = get_the_category(); ?>
-                        <div class="post__card__categories">
-                            <?php foreach ($cats as $cat) : ?>
-                                <div class="post__card__category_thumbnail"
-                                     style="background-color: <?= get_term_meta($cat->term_id, 'cc_color', true) ?>">
-                                    <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
-                                        <?= $cat->name; ?>
-                                    </a>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </header>
-                    <section>
-                        <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                        <p class="post__card__date"><?php the_date(); ?></p>
-                        <p><?php the_excerpt(); ?></p>
-                        <a class="post__card__next" href="<?php the_permalink(); ?>">Lire la suite</a>
-                    </section>
-                </div>
-            <?php endwhile;
+                            <?php
+                            $cats = get_the_category(); ?>
+                            <div class="post__card__categories">
+                                <?php foreach ($cats as $cat) : ?>
+                                    <div class="post__card__category_thumbnail"
+                                         style="background-color: <?= get_term_meta($cat->term_id, 'cc_color',
+                                                                                    true) ?>">
+                                        <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
+                                            <?= $cat->name; ?>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </header>
+                        <section>
+                            <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="post__card__date"><?php the_date(); ?></p>
+                            <p><?php the_excerpt(); ?></p>
+                            <a class="post__card__next" href="<?php the_permalink(); ?>">Lire la suite</a>
+                        </section>
+                    </div>
+                <?php endwhile;
             else:?>
                 <h3>Aucun article avec ce filtre.</h3>
             <?php endif; ?>
