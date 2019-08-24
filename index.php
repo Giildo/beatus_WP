@@ -56,18 +56,42 @@
     </nav>
 
     <section id="posts">
-        <h2>Quoi de neuf au collège ?</h2>
+        <button id="display__filters__button">
+            Filtrer
+            <i id="filter__icon__tune" class="material-icons">tune</i>
+            <i id="filter__icon__clear" class="material-icons">clear</i>
+        </button>
+        <header>
+            <h2>Quoi de neuf au collège ?</h2>
+
+            <div id="post__categories__filters">
+                <?php
+                // Activer si on souhaite afficher les catégories vides.
+                // $args = ['hide_empty' => false];
+                $args = [];
+
+                $categories = get_categories($args);
+                foreach ($categories as $category) :?>
+                    <div class="post__category__filter"
+                         style="background-color: <?= get_term_meta($category->term_id, 'cc_color',
+                                                                    true) ?>">
+                        <a href="<?= get_page_link($homeID) . '?cat=' . $category->slug; ?>">
+                            <?= $category->name; ?>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </header>
 
         <div id="posts__cards">
             <?php
+            $homeID = get_the_ID();
             $recentPosts = new WP_Query(
                 [
-                    'category_name'  => 'actualites-de-la-sss',
+                    'category_name'  => $_GET['cat'],
                     'posts_per_page' => 7
                 ]
             );
-            // $recentPosts->query('showposts=18');
-            // TODO: faire le filtre et ajouter le lien dans les vignettes de catégories
 
             function tn_custom_excerpt_length($length)
             {
@@ -83,32 +107,43 @@
 
             add_filter('excerpt_more', 'new_excerpt_more');
             ?>
-            <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
-                <div class="post__card">
-                    <header style="
-                            background-image: url(<?= get_the_post_thumbnail_url(); ?>);
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            ">
-                        <a href="<?php the_permalink(); ?>"></a>
+            <?php
+            if ($recentPosts->post_count !== 0) :
+                while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                    <div class="post__card">
+                        <header style="
+                                background-image: url(<?= get_the_post_thumbnail_url(); ?>);
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center;
+                                ">
+                            <a href="<?php the_permalink(); ?>"></a>
 
-                        <?php
-                        $cats = get_the_category();
-                        foreach ($cats as $cat) : ?>
-                            <div class="post__card__category_thumbnail"
-                                 style="background-color: <?= get_term_meta($cat->term_id, 'cc_color', true) ?>">
-                                <?= $cat->name; ?>
+                            <?php
+                            $cats = get_the_category(); ?>
+                            <div class="post__card__categories">
+                                <?php foreach ($cats as $cat) : ?>
+                                    <div class="post__card__category_thumbnail"
+                                         style="background-color: <?= get_term_meta($cat->term_id, 'cc_color',
+                                                                                    true) ?>">
+                                        <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
+                                            <?= $cat->name; ?>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
-                        <?php endforeach; ?>
-                    </header>
-                    <section>
-                        <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                        <p class="post__card__date"><?php the_date(); ?></p>
-                        <p><?php the_excerpt(); ?></p>
-                        <a class="post__card__next" href="<?php the_permalink(); ?>">Lire la suite</a>
-                    </section>
-                </div>
-            <?php endwhile; ?>
+                        </header>
+                        <section>
+                            <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <p class="post__card__date"><?php the_date(); ?></p>
+                            <p><?php the_excerpt(); ?></p>
+                            <a class="post__card__next" href="<?php the_permalink(); ?>">Lire la suite</a>
+                        </section>
+                    </div>
+                <?php endwhile;
+            else:?>
+                <h3>Aucun article avec ce filtre.</h3>
+            <?php endif; ?>
         </div>
     </section>
 
@@ -143,5 +178,16 @@
 
     <?php get_footer(); ?>
 </div>
+
+<script type="text/javascript">
+let coll = document.getElementById('display__filters__button');
+
+coll.addEventListener('click', function () {
+  let content = document.getElementById('post__categories__filters');
+  this.classList.toggle('active');
+
+  content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px';
+})
+</script>
 </body>
 </html>

@@ -1,57 +1,123 @@
-body #container #posts h2 {
-  font-weight: bold;
-  font-size: 48px;
-  color: #CC4500;
-  margin: 60px 0; }
-body #container #posts #posts__cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px; }
-  body #container #posts #posts__cards .post__card {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); }
-    body #container #posts #posts__cards .post__card header {
+body #container #posts {
+  position: relative; }
+  body #container #posts #display__filters__button {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    border: none;
+    font-size: 14px;
+    color: #CC4500;
+    padding: 10px 21px 10px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    body #container #posts #display__filters__button:focus {
+      outline: none; }
+    body #container #posts #display__filters__button i.material-icons {
+      font-size: 16px;
+      margin-left: 5px;
+      position: absolute;
+      right: 0; }
+    body #container #posts #display__filters__button:not(.active) i#filter__icon__clear {
+      color: rgba(204, 69, 0, 0);
+      transform: rotateZ(0);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+    body #container #posts #display__filters__button:not(.active) i#filter__icon__tune {
+      color: #cc4500;
+      transform: rotateZ(0);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+    body #container #posts #display__filters__button.active i#filter__icon__clear {
+      color: #cc4500;
+      transform: rotateZ(180deg);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+    body #container #posts #display__filters__button.active i#filter__icon__tune {
+      color: rgba(204, 69, 0, 0);
+      transform: rotateZ(180deg);
+      transition: color 0.2s ease-out, transform 0.2s ease-out; }
+  body #container #posts header h2 {
+    font-weight: bold;
+    font-size: 48px;
+    color: #CC4500;
+    margin: 60px 0;
+    border-bottom: 0; }
+  body #container #posts header #post__categories__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out; }
+    body #container #posts header #post__categories__filters .post__category__filter {
+      background-color: #fff;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 62px;
+      padding: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+      color: black;
+      margin: 5px;
+      margin: 10px; }
+      body #container #posts header #post__categories__filters .post__category__filter a {
+        text-decoration: none; }
+  body #container #posts #posts__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px; }
+    body #container #posts #posts__cards .post__card {
       width: 100%;
-      height: 200px;
-      margin-bottom: 5px;
-      position: relative; }
-      body #container #posts #posts__cards .post__card header a {
-        display: block;
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); }
+      body #container #posts #posts__cards .post__card header {
         width: 100%;
+        height: 200px;
+        margin-bottom: 5px;
+        position: relative; }
+        body #container #posts #posts__cards .post__card header a {
+          display: block;
+          width: 100%;
+          height: 100%; }
+        body #container #posts #posts__cards .post__card header .post__card__categories {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          display: flex;
+          flex-wrap: wrap; }
+          body #container #posts #posts__cards .post__card header .post__card__categories .post__card__category_thumbnail {
+            background-color: #fff;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 62px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+            margin: 5px; }
+            body #container #posts #posts__cards .post__card header .post__card__categories .post__card__category_thumbnail a {
+              text-decoration: none; }
+      body #container #posts #posts__cards .post__card:first-child {
+        grid-column: 1/3; }
+      body #container #posts #posts__cards .post__card section {
+        width: 100%;
+        padding: 0 15px 50px 15px;
+        box-sizing: border-box;
+        position: relative;
         height: 100%; }
-      body #container #posts #posts__cards .post__card header .post__card__category_thumbnail {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        background-color: #fff;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 62px;
-        padding: 5px;
-        font-weight: bold;
-        font-size: 14px;
-        text-decoration: none;
-        color: black; }
-    body #container #posts #posts__cards .post__card:first-child {
-      grid-column: 1/3; }
-    body #container #posts #posts__cards .post__card section {
-      width: 100%;
-      padding: 0 15px 50px 15px;
-      box-sizing: border-box;
-      position: relative;
-      height: 100%; }
-      body #container #posts #posts__cards .post__card section h5 {
-        font-weight: bold;
-        font-size: 16px;
-        margin: 10px 0; }
-        body #container #posts #posts__cards .post__card section h5 a {
-          text-decoration: none; }
-      body #container #posts #posts__cards .post__card section .post__card__date {
-        font-weight: 300;
-        font-size: 14px;
-        opacity: .5; }
-      body #container #posts #posts__cards .post__card section a.post__card__next {
-        opacity: .5; }
+        body #container #posts #posts__cards .post__card section h5 {
+          font-weight: bold;
+          font-size: 16px;
+          margin: 10px 0; }
+          body #container #posts #posts__cards .post__card section h5 a {
+            text-decoration: none; }
+        body #container #posts #posts__cards .post__card section .post__card__date {
+          font-weight: 300;
+          font-size: 14px;
+          opacity: .5; }
+        body #container #posts #posts__cards .post__card section a.post__card__next {
+          opacity: .5; }
 
 /*# sourceMappingURL=posts.css.map */
