@@ -4,10 +4,29 @@
 body {
   #container {
     #posts {
+      position: relative;
+
+      #display__filters__button {
+        position: absolute;
+        border: none;
+        right: 0;
+        background-color: white;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+        margin-top: 10px;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
       header {
         h2 {
           @include h2__style;
-          margin-bottom: 0;
+          border-bottom: 0;
         }
 
         #post__categories__filters {
@@ -15,6 +34,9 @@ body {
           flex-wrap: wrap;
           justify-content: center;
           margin: 40px 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
 
           .post__category__filter {
             @include thumbnails__category_filter;

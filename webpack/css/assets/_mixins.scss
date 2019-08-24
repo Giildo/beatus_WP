@@ -15,4 +15,8 @@
   text-decoration: none;
   color: black;
   margin: 5px;
+
+  & a {
+    text-decoration: none;
+  }
 }

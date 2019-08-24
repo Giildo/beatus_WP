@@ -56,6 +56,7 @@
     </nav>
 
     <section id="posts">
+        <button id="display__filters__button">Filtrer +</button>
         <header>
             <h2>Quoi de neuf au collège ?</h2>
 
@@ -173,5 +174,17 @@
 
     <?php get_footer(); ?>
 </div>
+
+<script type="text/javascript">
+let coll = document.getElementById('display__filters__button');
+
+coll.addEventListener('click', function () {
+  let content = document.getElementById('post__categories__filters');
+  this.classList.toggle('active');
+
+  this.classList.contains('active') ? this.textContent = 'Filtrer -' : this.textContent = 'Filtrer +';
+  content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px';
+})
+</script>
 </body>
 </html>
