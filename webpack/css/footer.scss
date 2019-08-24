@@ -2,13 +2,16 @@ footer {
   #footer__container {
     padding: 92px 0 80px 0;
     display: grid;
-    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-columns: 1fr 5fr;
 
     img {
       width: 110px;
     }
 
-    address {
+    nav {
+      display: flex;
+      justify-content: space-between;
+
       h5 {
         height: 17px;
         text-transform: uppercase;
@@ -16,17 +19,31 @@ footer {
         color: #065E70;
       }
 
-      a {
-        font-size: 14px;
-        text-decoration: none;
+      li {
+        font-size: 0.8em;
         color: #065E70;
-        font-style: normal;
+        padding-bottom: 5px;
+
+        a {
+          color: #065E70;
+          text-decoration: none;
+        }
       }
 
-      p {
-        font-size: 14px;
-        color: #065E70;
-        font-style: normal;
+      address {
+        p {
+          font-size: 0.8em;
+          color: #065E70;
+          font-style: normal;
+          padding-left: 40px;
+
+          a {
+            font-size: 0.8em;
+            text-decoration: none;
+            color: #065E70;
+            font-style: normal;
+          }
+        }
       }
     }
   }

@@ -36,8 +36,7 @@ body #container header nav {
     body #container header nav ul li.menu-item {
       list-style: none;
       line-height: 59px;
-      z-index: 100;
-      padding: 15px; }
+      z-index: 100; }
       body #container header nav ul li.menu-item:hover {
         background-color: #fc9218; }
       body #container header nav ul li.menu-item.menu-item-has-children::after {
@@ -63,7 +62,8 @@ body #container header nav {
         width: auto; }
         body #container header nav ul li.menu-item ul.sub-menu li.menu-item {
           position: relative;
-          line-height: normal; }
+          line-height: normal;
+          padding: 15px; }
           body #container header nav ul li.menu-item ul.sub-menu li.menu-item.menu-item-has-children::after {
             content: "chevron_right";
             margin-right: 15px;
