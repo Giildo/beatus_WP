@@ -92,8 +92,9 @@
                         <a href="<?php the_permalink(); ?>"></a>
 
                         <?php
-                        $cats = get_the_category();
-                        foreach ($cats as $cat) : ?>
+                        $cats = get_the_category();?>
+                        <div class="post__card__categories">
+                            <?php foreach ($cats as $cat) : ?>
                             <div class="post__card__category_thumbnail"
                                  style="background-color: <?= get_term_meta($cat->term_id, 'cc_color', true) ?>">
                                 <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
@@ -101,6 +102,7 @@
                                 </a>
                             </div>
                         <?php endforeach; ?>
+                        </div>
                     </header>
                     <section>
                         <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
