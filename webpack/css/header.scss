@@ -1,0 +1,249 @@
+@import "assets/colors";
+
+$fontSize: 12px;
+$rotation: 77.48deg;
+
+// TODO: Faire en sorte que les cercles ne tournent pas tous dans le même sens
+
+body {
+  #container {
+    header {
+      section:first-child {
+        padding: 13px 0;
+        color: $orange;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          width: 73px;
+          height: 51px;
+        }
+
+        address {
+          display: flex;
+
+          span {
+            margin-right: 73px;
+          }
+
+          span, a {
+            i.material-icons {
+              font-size: $fontSize;
+            }
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: normal;
+            font-size: $fontSize;
+            text-decoration: none;
+            color: $orange;
+          }
+        }
+      }
+
+      nav {
+        height: 60px;
+        background-color: $orange;
+        margin: 0 -150px;
+        display: flex;
+        align-items: center;
+        z-index: 500;
+
+        ul {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 150px;
+
+          li.menu-item {
+            list-style: none;
+
+            a {
+              font-weight: bold;
+              font-size: 12px;
+              text-transform: uppercase;
+              color: white;
+              text-decoration: none;
+              padding: 15px;
+            }
+
+            ul.sub-menu {
+              padding: 0;
+              flex-direction: column;
+              position: absolute;
+              background-color: $orange;
+              display: none;
+              width: auto;
+
+              li.menu-item {
+                padding: 15px 0;
+
+                ul.sub-menu {
+                  position: absolute;
+                  right: 0;
+                }
+              }
+            }
+
+            &:hover ul.sub-menu {
+              display: block;
+            }
+          }
+        }
+      }
+
+      section#title {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        height: 577px;
+
+        section:first-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          padding-right: 60px;
+
+          h1 {
+            font-weight: bold;
+            font-size: 60px;
+            color: $orange;
+            margin-bottom: 51px;
+          }
+        }
+
+        section:nth-child(2) {
+          display: flex;
+          justify-content: center;
+          position: relative;
+
+          div {
+            border-radius: 50%;
+            transform: rotate($rotation);
+            position: absolute;
+          }
+
+          #orange__circle {
+            background-color: $orangeLight;
+            width: 464.92px;
+            height: 494px;
+            top: 10px;
+          }
+
+          #yellow__circle {
+            background-color: $yellow;
+            width: 432.65px;
+            height: 470px;
+            top: 20px;
+          }
+
+          #green__circle {
+            background-color: $greenLight;
+            width: 402.99px;
+            height: 448px;
+            top: 29px;
+          }
+
+          #img__circle {
+            width: 439px;
+            height: 416px;
+            border-radius: 50%;
+            transform: rotate(0);
+            top: 64px;
+            background: {
+              image: url("../assets/beatus.jpg");
+              position-x: center;
+              position-y: top;
+              size: 100%;
+              repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    > nav {
+      background-color: rgba(242, 140, 14, 0.1);
+      height: 478px;
+      margin: 0 -150px;
+      padding: 60px 150px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 40px;
+      box-sizing: border-box;
+
+      div {
+        background-color: #fff;
+        border-radius: 31px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        cursor: pointer;
+
+        header {
+          height: 152px;
+          border-radius: 31px 31px 0 0;
+        }
+
+        &:nth-child(1) header {
+          background: {
+            image: url("../assets/thumbnail1.jpeg");
+            position-x: -51px;
+            position-y: -16px;
+            size: 129%;
+            repeat: no-repeat;
+
+          }
+        }
+
+        &:nth-child(2) header {
+          background: {
+            image: url("../assets/thumbnail2.jpeg");
+            position-x: -51px;
+            position-y: -16px;
+            size: 129%;
+            repeat: no-repeat;
+
+          }
+        }
+
+        &:nth-child(3) header {
+          background: {
+            image: url("../assets/thumbnail3.jpeg");
+            position-x: -51px;
+            position-y: -16px;
+            size: 129%;
+            repeat: no-repeat;
+
+          }
+        }
+
+        &:nth-child(4) header {
+          background: {
+            image: url("../assets/thumbnail4.jpeg");
+            position-x: -51px;
+            position-y: -16px;
+            size: 129%;
+            repeat: no-repeat;
+
+          }
+        }
+
+        section {
+          h4 {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 27px auto;
+          }
+
+          p {
+            margin: 0 21px 21px 21px;
+          }
+        }
+      }
+    }
+  }
+}

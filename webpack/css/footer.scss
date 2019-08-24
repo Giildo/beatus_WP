@@ -1,0 +1,33 @@
+footer {
+  #footer__container {
+    padding: 92px 0 80px 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+
+    img {
+      width: 110px;
+    }
+
+    address {
+      h5 {
+        height: 17px;
+        text-transform: uppercase;
+        font-style: normal;
+        color: #065E70;
+      }
+
+      a {
+        font-size: 14px;
+        text-decoration: none;
+        color: #065E70;
+        font-style: normal;
+      }
+
+      p {
+        font-size: 14px;
+        color: #065E70;
+        font-style: normal;
+      }
+    }
+  }
+}

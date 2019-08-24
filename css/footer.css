@@ -1,0 +1,22 @@
+footer #footer__container {
+  padding: 92px 0 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr; }
+  footer #footer__container img {
+    width: 110px; }
+  footer #footer__container address h5 {
+    height: 17px;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #065E70; }
+  footer #footer__container address a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #065E70;
+    font-style: normal; }
+  footer #footer__container address p {
+    font-size: 14px;
+    color: #065E70;
+    font-style: normal; }
+
+/*# sourceMappingURL=footer.css.map */

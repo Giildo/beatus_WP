@@ -1,0 +1,159 @@
+body #container header section:first-child {
+  padding: 13px 0;
+  color: #CC4500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  body #container header section:first-child img {
+    width: 73px;
+    height: 51px; }
+  body #container header section:first-child address {
+    display: flex; }
+    body #container header section:first-child address span {
+      margin-right: 73px; }
+    body #container header section:first-child address span, body #container header section:first-child address a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+      font-size: 12px;
+      text-decoration: none;
+      color: #CC4500; }
+      body #container header section:first-child address span i.material-icons, body #container header section:first-child address a i.material-icons {
+        font-size: 12px; }
+body #container header nav {
+  height: 60px;
+  background-color: #CC4500;
+  margin: 0 -150px;
+  display: flex;
+  align-items: center;
+  z-index: 500; }
+  body #container header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 150px; }
+    body #container header nav ul li.menu-item {
+      list-style: none; }
+      body #container header nav ul li.menu-item a {
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        padding: 15px; }
+      body #container header nav ul li.menu-item ul.sub-menu {
+        padding: 0;
+        flex-direction: column;
+        position: absolute;
+        background-color: #CC4500;
+        display: none;
+        width: auto; }
+        body #container header nav ul li.menu-item ul.sub-menu li.menu-item {
+          padding: 15px 0; }
+          body #container header nav ul li.menu-item ul.sub-menu li.menu-item ul.sub-menu {
+            position: absolute;
+            right: 0; }
+      body #container header nav ul li.menu-item:hover ul.sub-menu {
+        display: block; }
+body #container header section#title {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  height: 577px; }
+  body #container header section#title section:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-right: 60px; }
+    body #container header section#title section:first-child h1 {
+      font-weight: bold;
+      font-size: 60px;
+      color: #CC4500;
+      margin-bottom: 51px; }
+  body #container header section#title section:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    position: relative; }
+    body #container header section#title section:nth-child(2) div {
+      border-radius: 50%;
+      transform: rotate(77.48deg);
+      position: absolute; }
+    body #container header section#title section:nth-child(2) #orange__circle {
+      background-color: #F28C0E;
+      width: 464.92px;
+      height: 494px;
+      top: 10px; }
+    body #container header section#title section:nth-child(2) #yellow__circle {
+      background-color: #F2E207;
+      width: 432.65px;
+      height: 470px;
+      top: 20px; }
+    body #container header section#title section:nth-child(2) #green__circle {
+      background-color: #B3D962;
+      width: 402.99px;
+      height: 448px;
+      top: 29px; }
+    body #container header section#title section:nth-child(2) #img__circle {
+      width: 439px;
+      height: 416px;
+      border-radius: 50%;
+      transform: rotate(0);
+      top: 64px;
+      background-image: url("../assets/beatus.jpg");
+      background-position-x: center;
+      background-position-y: top;
+      background-size: 100%;
+      background-repeat: no-repeat; }
+body #container > nav {
+  background-color: rgba(242, 140, 14, 0.1);
+  height: 478px;
+  margin: 0 -150px;
+  padding: 60px 150px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  box-sizing: border-box; }
+  body #container > nav div {
+    background-color: #fff;
+    border-radius: 31px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    cursor: pointer; }
+    body #container > nav div header {
+      height: 152px;
+      border-radius: 31px 31px 0 0; }
+    body #container > nav div:nth-child(1) header {
+      background-image: url("../assets/thumbnail1.jpeg");
+      background-position-x: -51px;
+      background-position-y: -16px;
+      background-size: 129%;
+      background-repeat: no-repeat; }
+    body #container > nav div:nth-child(2) header {
+      background-image: url("../assets/thumbnail2.jpeg");
+      background-position-x: -51px;
+      background-position-y: -16px;
+      background-size: 129%;
+      background-repeat: no-repeat; }
+    body #container > nav div:nth-child(3) header {
+      background-image: url("../assets/thumbnail3.jpeg");
+      background-position-x: -51px;
+      background-position-y: -16px;
+      background-size: 129%;
+      background-repeat: no-repeat; }
+    body #container > nav div:nth-child(4) header {
+      background-image: url("../assets/thumbnail4.jpeg");
+      background-position-x: -51px;
+      background-position-y: -16px;
+      background-size: 129%;
+      background-repeat: no-repeat; }
+    body #container > nav div section h4 {
+      font-weight: bold;
+      font-size: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 27px auto; }
+    body #container > nav div section p {
+      margin: 0 21px 21px 21px; }
+
+/*# sourceMappingURL=header.css.map */

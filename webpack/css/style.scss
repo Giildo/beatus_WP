@@ -1,0 +1,17 @@
+@import "assets/fonts";
+@import "assets/colors";
+
+body {
+  background: url("../assets/bg.png");
+  margin: 0;
+
+  #container {
+    margin: 0 150px;
+    height: 100vh;
+
+    a, p, h1, h2, h3, h4, h5, h6, div, span, input, textarea, label {
+      font-family: $font;
+      color: $blackGrey;
+    }
+  }
+}

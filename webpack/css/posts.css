@@ -1,0 +1,53 @@
+body #container #posts h2 {
+  font-weight: bold;
+  font-size: 48px;
+  color: #CC4500;
+  margin: 60px 0; }
+body #container #posts #posts__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px; }
+  body #container #posts #posts__cards .post__card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); }
+    body #container #posts #posts__cards .post__card header {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 5px;
+      position: relative; }
+      body #container #posts #posts__cards .post__card header img {
+        width: 100% !important; }
+      body #container #posts #posts__cards .post__card header .post__card__category_thumbnail {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 62px;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+        color: black; }
+    body #container #posts #posts__cards .post__card section {
+      width: 100%;
+      padding: 0 15px 50px 15px;
+      box-sizing: border-box;
+      position: relative;
+      height: 100%; }
+      body #container #posts #posts__cards .post__card section h5 {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 10px 0; }
+        body #container #posts #posts__cards .post__card section h5 a {
+          text-decoration: none; }
+      body #container #posts #posts__cards .post__card section .post__card__date {
+        font-weight: 300;
+        font-size: 14px;
+        opacity: .5; }
+      body #container #posts #posts__cards .post__card section a.post__card__next {
+        opacity: .5; }
+
+/*# sourceMappingURL=posts.css.map */
