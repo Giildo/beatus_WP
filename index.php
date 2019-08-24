@@ -82,7 +82,9 @@
 
             add_filter('excerpt_more', 'new_excerpt_more');
             ?>
-            <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+            <?php
+            if ($recentPosts->post_count !== 0) :
+            while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
                 <div class="post__card">
                     <header style="
                             background-image: url(<?= get_the_post_thumbnail_url(); ?>);
@@ -92,16 +94,16 @@
                         <a href="<?php the_permalink(); ?>"></a>
 
                         <?php
-                        $cats = get_the_category();?>
+                        $cats = get_the_category(); ?>
                         <div class="post__card__categories">
                             <?php foreach ($cats as $cat) : ?>
-                            <div class="post__card__category_thumbnail"
-                                 style="background-color: <?= get_term_meta($cat->term_id, 'cc_color', true) ?>">
-                                <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
-                                    <?= $cat->name; ?>
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
+                                <div class="post__card__category_thumbnail"
+                                     style="background-color: <?= get_term_meta($cat->term_id, 'cc_color', true) ?>">
+                                    <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
+                                        <?= $cat->name; ?>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </header>
                     <section>
@@ -111,7 +113,10 @@
                         <a class="post__card__next" href="<?php the_permalink(); ?>">Lire la suite</a>
                     </section>
                 </div>
-            <?php endwhile; ?>
+            <?php endwhile;
+            else:?>
+                <h3>Aucun article avec ce filtre.</h3>
+            <?php endif; ?>
         </div>
     </section>
 
