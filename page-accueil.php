@@ -1,6 +1,9 @@
 <?php get_header();
 $page = get_post();
 $content = preg_split('/\n/', $page->post_content);
+
+var_dump(get_post(368));
+var_dump(get_the_post_thumbnail_url(368));
 ?>
 <header>
     <section id="title">
@@ -22,7 +25,12 @@ $content = preg_split('/\n/', $page->post_content);
 
 <nav>
     <div>
-        <header></header>
+        <header style="
+                background-image: url(<?= get_the_post_thumbnail_url(2721);?>);
+                background-size: cover;
+                background-position: center;
+                ">
+        </header>
         <section>
             <h4>UPE2A</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere

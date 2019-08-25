@@ -16,12 +16,6 @@ body #container > nav {
     body #container > nav div header {
       height: 152px;
       border-radius: 31px 31px 0 0; }
-    body #container > nav div:nth-child(1) header {
-      background-image: url("../assets/thumbnail1.jpeg");
-      background-position-x: -51px;
-      background-position-y: -16px;
-      background-size: 129%;
-      background-repeat: no-repeat; }
     body #container > nav div:nth-child(2) header {
       background-image: url("../assets/thumbnail2.jpeg");
       background-position-x: -51px;

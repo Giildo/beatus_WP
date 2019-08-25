@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); $post = get_post(); var_dump($post); ?>
 
 <nav>
     <div>
