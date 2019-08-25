@@ -39,6 +39,7 @@ body {
           div {
             border-radius: 50%;
             position: absolute;
+            transform: rotate($rotation);
           }
 
           #orange__circle {

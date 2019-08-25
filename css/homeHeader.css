@@ -22,7 +22,8 @@ body #container header section#title {
     height: 577px; }
     body #container header section#title section:nth-child(2) div {
       border-radius: 50%;
-      position: absolute; }
+      position: absolute;
+      transform: rotate(77.48deg); }
     body #container header section#title section:nth-child(2) #orange__circle {
       background-color: #fc9218;
       width: 464.92px;
