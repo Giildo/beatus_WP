@@ -2,32 +2,40 @@
 $page = get_post();
 $content = preg_split('/\n/', $page->post_content);
 
-if (get_the_post_thumbnail_url(2721)) {
-    $imageUrl = get_the_post_thumbnail_url(2721);
-    $upe2aSectionHeader = "style=\"background-image: url('{$imageUrl}');";
-    $upe2aSectionHeader .= "background-size: cover;";
-    $upe2aSectionHeader .= "background-position: center;\"";
+/**
+ * Permet de créer le style pour les vignettes des sections.
+ *
+ * @param string $imageUrl
+ *
+ * @return string
+ */
+function backgroundStyle(string $imageUrl)
+{
+    $style = "style=\"background-image: url('{$imageUrl}');";
+    $style .= "background-size: cover;";
+    $style .= "background-position: center;\"";
+    return $style;
 }
 
-if (get_the_post_thumbnail_url(44)) {
-    $imageUrl = get_the_post_thumbnail_url(44);
-    $ulisSectionHeader = "style=\"background-image: url('{$imageUrl}');";
-    $ulisSectionHeader .= "background-size: cover;";
-    $ulisSectionHeader .= "background-position: center;\"";
+$upe2aID = 2721;
+$ulisID = 44;
+$asId = 336;
+$sssId = 368;
+
+if (get_the_post_thumbnail_url($upe2aID)) {
+    $upe2aSectionHeader = backgroundStyle(get_the_post_thumbnail_url($upe2aID));
 }
 
-if (get_the_post_thumbnail_url(336)) {
-    $imageUrl = get_the_post_thumbnail_url(336);
-    $asSectionHeader = "style=\"background-image: url('{$imageUrl}');";
-    $asSectionHeader .= "background-size: cover;";
-    $asSectionHeader .= "background-position: center;\"";
+if (get_the_post_thumbnail_url($ulisID)) {
+    $ulisSectionHeader = backgroundStyle(get_the_post_thumbnail_url($ulisID));
 }
 
-if (get_the_post_thumbnail_url(368)) {
-    $imageUrl = get_the_post_thumbnail_url(368);
-    $sssSectionHeader = "style=\"background-image: url('{$imageUrl}');";
-    $sssSectionHeader .= "background-size: cover;";
-    $sssSectionHeader .= "background-position: center;\"";
+if (get_the_post_thumbnail_url($asId)) {
+    $asSectionHeader = backgroundStyle(get_the_post_thumbnail_url($asId));
+}
+
+if (get_the_post_thumbnail_url($sssId)) {
+    $sssSectionHeader = backgroundStyle(get_the_post_thumbnail_url($sssId));
 }
 
 function tn_custom_excerpt_length($length)
@@ -64,40 +72,48 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 <nav>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(2721)) {
-            echo $upe2aSectionHeader;
-        } ?>></header>
-        <section>
-            <h4>UPE2A</h4>
-            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageUpe2a') ?>
-        </section>
+        <a href="<?= get_permalink($upe2aID); ?>">
+            <header <?php if (get_the_post_thumbnail_url(2721)) {
+                echo $upe2aSectionHeader;
+            } ?>></header>
+            <section>
+                <h4>UPE2A</h4>
+                <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageUpe2a') ?>
+            </section>
+        </a>
     </div>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(44)) {
-            echo $ulisSectionHeader;
-        } ?>></header>
-        <section>
-            <h4>ULIS</h4>
-            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageUlis') ?>
-        </section>
+        <a href="<?= get_permalink($ulisID); ?>">
+            <header <?php if (get_the_post_thumbnail_url(44)) {
+                echo $ulisSectionHeader;
+            } ?>></header>
+            <section>
+                <h4>ULIS</h4>
+                <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageUlis') ?>
+            </section>
+        </a>
     </div>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(336)) {
-            echo $asSectionHeader;
-        } ?>></header>
-        <section>
-            <h4>AS</h4>
-            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageAS') ?>
-        </section>
+        <a href="<?= get_permalink($asId); ?>">
+            <header <?php if (get_the_post_thumbnail_url(336)) {
+                echo $asSectionHeader;
+            } ?>></header>
+            <section>
+                <h4>AS</h4>
+                <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageAS') ?>
+            </section>
+        </a>
     </div>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(368)) {
-            echo $sssSectionHeader;
-        } ?>></header>
-        <section>
-            <h4>3S Football</h4>
-            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePage3S') ?>
-        </section>
+        <a href="<?= get_permalink($sssId); ?>">
+            <header <?php if (get_the_post_thumbnail_url(368)) {
+                echo $sssSectionHeader;
+            } ?>></header>
+            <section>
+                <h4>3S Football</h4>
+                <?php CustomMetaBox::ACFDisplay($page->ID, 'homePage3S') ?>
+            </section>
+        </a>
     </div>
 </nav>
 
