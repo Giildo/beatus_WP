@@ -21,8 +21,10 @@
 
 <header>
     <section>
-        <img src="<?= get_template_directory_uri() . '/assets/logo_transparent.png'; ?>"
+        <a href="<?= get_home_url(); ?>">
+            <img src="<?= get_template_directory_uri() . '/assets/logo_transparent.png'; ?>"
              alt="Logo du collège Beatus Rhenanus, avec le nom du collège et différents éléments associés à l'éducation"/>
+        </a>
 
         <address>
             <span>
