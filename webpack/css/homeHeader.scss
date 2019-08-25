@@ -1,0 +1,79 @@
+@import "assets/colors";
+@import "assets/fonts";
+
+$rotation: 77.48deg;
+
+body {
+  #container {
+    header {
+      section#title {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        height: 577px;
+
+        section:first-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          padding-right: 60px;
+
+          h1 {
+            font-weight: bold;
+            font-size: 60px;
+            color: $orange;
+            margin-bottom: 51px;
+          }
+        }
+
+        section:nth-child(2) {
+          display: flex;
+          justify-content: center;
+          position: relative;
+
+          div {
+            border-radius: 50%;
+            transform: rotate($rotation);
+            position: absolute;
+          }
+
+          #orange__circle {
+            background-color: $orangeLight;
+            width: 464.92px;
+            height: 494px;
+            top: 10px;
+          }
+
+          #yellow__circle {
+            background-color: $yellow;
+            width: 432.65px;
+            height: 470px;
+            top: 20px;
+          }
+
+          #green__circle {
+            background-color: $greenLight;
+            width: 402.99px;
+            height: 448px;
+            top: 29px;
+          }
+
+          #img__circle {
+            width: 439px;
+            height: 416px;
+            border-radius: 50%;
+            transform: rotate(0);
+            top: 64px;
+            background: {
+              image: url("../assets/logo_carre.png");
+              position-x: center;
+              position-y: top;
+              size: 100%;
+              repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}

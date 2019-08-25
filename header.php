@@ -29,29 +29,4 @@
         wp_nav_menu($college_menu_args);
         ?>
     </nav>
-
-    <section id="title">
-        <section>
-            <h1>Bienvenue au collège Beatus Rhenanus</h1>
-
-            <p>
-                Bonjour et bienvenue sur le site du collège Beatus Rhenanus à Sélestat. Ce site se veut une fenêtre
-                ouverte sur le collège et son environnement local, afin de partager avec vous la vie qui s’y déroule
-                chaque jour… Il est celui des élèves et de tous les adultes qui les encadrent et les accompagnent dans
-                leur parcours.
-            </p>
-            <p>
-                Il est le reflet du dynamisme et de l’enthousiasme de tous, de la conviction intrinsèque que l’éducation
-                et le savoir mènent à la découverte du monde qui est le nôtre, à la découverte de soi et de l’Autre,
-                points fondamentaux pour la construction quotidienne de son accomplissement au sein du groupe. En vous
-                souhaitant une bonne et agréable visite.
-            </p>
-        </section>
-        <section>
-            <div id="orange__circle"></div>
-            <div id="yellow__circle"></div>
-            <div id="green__circle"></div>
-            <div id="img__circle"></div>
-        </section>
-    </section>
 </header>

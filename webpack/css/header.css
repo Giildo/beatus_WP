@@ -81,55 +81,6 @@ body #container header nav {
             display: block; }
       body #container header nav ul li.menu-item:hover ul.sub-menu {
         display: block; }
-body #container header section#title {
-  display: grid;
-  grid-template-columns: 6fr 4fr;
-  height: 577px; }
-  body #container header section#title section:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding-right: 60px; }
-    body #container header section#title section:first-child h1 {
-      font-weight: bold;
-      font-size: 60px;
-      color: #CC4500;
-      margin-bottom: 51px; }
-  body #container header section#title section:nth-child(2) {
-    display: flex;
-    justify-content: center;
-    position: relative; }
-    body #container header section#title section:nth-child(2) div {
-      border-radius: 50%;
-      transform: rotate(77.48deg);
-      position: absolute; }
-    body #container header section#title section:nth-child(2) #orange__circle {
-      background-color: #fc9218;
-      width: 464.92px;
-      height: 494px;
-      top: 10px; }
-    body #container header section#title section:nth-child(2) #yellow__circle {
-      background-color: #fff100;
-      width: 432.65px;
-      height: 470px;
-      top: 20px; }
-    body #container header section#title section:nth-child(2) #green__circle {
-      background-color: #c7dd54;
-      width: 402.99px;
-      height: 448px;
-      top: 29px; }
-    body #container header section#title section:nth-child(2) #img__circle {
-      width: 439px;
-      height: 416px;
-      border-radius: 50%;
-      transform: rotate(0);
-      top: 64px;
-      background-image: url("../assets/logo_carre.png");
-      background-position-x: center;
-      background-position-y: top;
-      background-size: 100%;
-      background-repeat: no-repeat; }
 body #container > nav {
   background-color: rgba(242, 140, 14, 0.1);
   height: 478px;
