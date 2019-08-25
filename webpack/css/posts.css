@@ -80,7 +80,8 @@ body #container #posts {
         body #container #posts #posts__cards .post__card header a {
           display: block;
           width: 100%;
-          height: 100%; }
+          height: 100%;
+          text-decoration: none; }
         body #container #posts #posts__cards .post__card header .post__card__categories {
           position: absolute;
           top: 8px;
