@@ -58,7 +58,7 @@ class CustomMetaBox
         add_action('admin_init', [&$this, 'init']);
 
         //Initialise la fonction de sauvegarde quand on sauvegarde l'article
-        add_action('save_post', [&$this, 'init']);
+        add_action('save_post', [&$this, 'save']);
     }
 
     /**
@@ -81,7 +81,14 @@ class CustomMetaBox
         }
     }
 
-    public function save($post_id)
+    /**
+     * Sauvegarde les informations notées dans les champs d'ACF.
+     *
+     * @param $post_id
+     *
+     * @return bool
+     */
+    public function save(string $post_id)
     {
         // Pas de sauvegarde auto, sauvegarde AJAX et sortie si le POST n'existe pas
         if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || (defined('DOING_AJAX') && DOING_AJAX)) {
@@ -99,15 +106,15 @@ class CustomMetaBox
         }
 
         foreach ($this->fields as $field) {
-            $value = $_POST[$field->id()];
+            $value = $_POST[$field->getId()];
 
-            if (isset($_POST[$field->id()])) {
-                if (get_post_meta($post_id, $field->id())) {
-                    update_post_meta($post_id, $field->id(), $value);
+            if (isset($_POST[$field->getId()])) {
+                if (get_post_meta($post_id, $field->getId())) {
+                    update_post_meta($post_id, $field->getId(), $value);
                 } else {
                     $value == ''
-                        ? delete_post_meta($post_id, $field->id())
-                        : add_post_meta($post_id, $field->id(), $value);
+                        ? delete_post_meta($post_id, $field->getId())
+                        : add_post_meta($post_id, $field->getId(), $value);
                 }
             }
         }
@@ -148,73 +155,19 @@ class CustomMetaBox
      * @param string|null $prefix - Si présent, label a afficher avant la valeur de l'ACF.
      * @param string|null $suffix - Unité si besoin (ex. : cL).
      *
-     * @return bool
+     * @return void
      */
-    public static function ACFDisplay(int $idPost, string $idACF, string $prefix = null, string $suffix = null): bool
+    public static function ACFDisplay(int $idPost, string $idACF, string $prefix = null, string $suffix = null)
     {
-        if ($postMeta = get_post_meta($idPost, $idACF, true) !== '') {
+        if (get_post_meta($idPost, $idACF, true) !== '') {
+            $postMeta = get_post_meta($idPost, $idACF, true);
             echo "<p>{$prefix}{$postMeta}{$suffix}</p>";
         } else {
-            return false;
+            $lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
+            $lorem .= 'Quisque pretium libero nisl, non posuere sapien laoreet ut. ';
+            $lorem .= 'Nulla a sodales enim, in ullamcorper tellus.';
+            echo "<p>{$lorem}</p>";
         }
-
-        return true;
-    }
-
-    /**
-     * @return string
-     */
-    public function getId(): string
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPostType(): string
-    {
-        return $this->postType;
-    }
-
-    /**
-     * @return array|CustomField[]
-     */
-    public function getFields()
-    {
-        return $this->fields;
-    }
-
-    /**
-     * @param string $id
-     */
-    public function setId(string $id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @param string $title
-     */
-    public function setTitle(string $title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @param string $postType
-     */
-    public function setPostType(string $postType)
-    {
-        $this->postType = $postType;
     }
 
     /**

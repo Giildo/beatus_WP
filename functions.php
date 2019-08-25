@@ -23,7 +23,7 @@ if ($post_id === 15) {
                 'homePageUlis',
                 'ULIS',
                 'textarea',
-                'Résumé de la section UPE2A.',
+                'Résumé de la section ULIS.',
                 $lorem
             )
         )->addField(
@@ -31,7 +31,7 @@ if ($post_id === 15) {
                 'homePageAS',
                 'AS',
                 'textarea',
-                'Résumé de la section UPE2A.',
+                'Résumé de la section AS.',
                 $lorem
             )
         )->addField(
@@ -39,7 +39,7 @@ if ($post_id === 15) {
                 'homePage3S',
                 '3S Football',
                 'textarea',
-                'Résumé de la section UPE2A.',
+                'Résumé de la section 3S.',
                 $lorem
             )
         );

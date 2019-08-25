@@ -69,8 +69,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
         } ?>></header>
         <section>
             <h4>UPE2A</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
-                sapien laoreet ut. Nulla a sodales enim, in ullamcorper tellus.</p>
+            <?= CustomMetaBox::ACFDisplay($page->ID, 'homePageUpe2a') ?>
         </section>
     </div>
     <div>
