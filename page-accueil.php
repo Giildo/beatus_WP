@@ -29,6 +29,20 @@ if (get_the_post_thumbnail_url(368)) {
     $sssSectionHeader .= "background-size: cover;";
     $sssSectionHeader .= "background-position: center;\"";
 }
+
+function tn_custom_excerpt_length($length)
+{
+    return 20;
+}
+
+add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
+
+function new_excerpt_more($more)
+{
+    return '...';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
 ?>
 <header>
     <section id="title">
@@ -50,7 +64,9 @@ if (get_the_post_thumbnail_url(368)) {
 
 <nav>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(2721)) echo $upe2aSectionHeader; ?>></header>
+        <header <?php if (get_the_post_thumbnail_url(2721)) {
+            echo $upe2aSectionHeader;
+        } ?>></header>
         <section>
             <h4>UPE2A</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -58,7 +74,9 @@ if (get_the_post_thumbnail_url(368)) {
         </section>
     </div>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(44)) echo $ulisSectionHeader; ?>></header>
+        <header <?php if (get_the_post_thumbnail_url(44)) {
+            echo $ulisSectionHeader;
+        } ?>></header>
         <section>
             <h4>ULIS</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -66,7 +84,9 @@ if (get_the_post_thumbnail_url(368)) {
         </section>
     </div>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(336)) echo $asSectionHeader; ?>></header>
+        <header <?php if (get_the_post_thumbnail_url(336)) {
+            echo $asSectionHeader;
+        } ?>></header>
         <section>
             <h4>AS</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -74,7 +94,9 @@ if (get_the_post_thumbnail_url(368)) {
         </section>
     </div>
     <div>
-        <header <?php if (get_the_post_thumbnail_url(368)) echo $sssSectionHeader; ?>></header>
+        <header <?php if (get_the_post_thumbnail_url(368)) {
+            echo $sssSectionHeader;
+        } ?>></header>
         <section>
             <h4>3S Football</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -120,20 +142,6 @@ if (get_the_post_thumbnail_url(368)) {
                 'posts_per_page' => 7
             ]
         );
-
-        function tn_custom_excerpt_length($length)
-        {
-            return 20;
-        }
-
-        add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
-
-        function new_excerpt_more($more)
-        {
-            return '...';
-        }
-
-        add_filter('excerpt_more', 'new_excerpt_more');
         ?>
         <?php
         if ($recentPosts->post_count !== 0) :

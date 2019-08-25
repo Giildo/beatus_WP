@@ -55,10 +55,10 @@ class CustomMetaBox
     public function addAction()
     {
         //Initialise que si on est dans un menu administrateur
-        add_action('admin_init', [&$this, 'initialisation']);
+        add_action('admin_init', [&$this, 'init']);
 
         //Initialise la fonction de sauvegarde quand on sauvegarde l'article
-        add_action('save_post', [&$this, 'initialisation']);
+        add_action('save_post', [&$this, 'init']);
     }
 
     /**
@@ -66,7 +66,7 @@ class CustomMetaBox
      *
      * @return void
      */
-    public function initialisation()
+    public function init()
     {
         if (function_exists('add_meta_box')) {
             add_meta_box(
@@ -126,13 +126,13 @@ class CustomMetaBox
         global $post;
 
         foreach ($this->fields as $field) {
-            $value = get_post_meta($post->ID, $field->id(), true); //Je vérifie si la valeur est définie en POST
+            $value = get_post_meta($post->ID, $field->getId(), true); //Je vérifie si la valeur est définie en POST
 
             if ($value !== '') {
                 $field->setDefaultValue($value); // Si ce n'est pas le cas définie la valeur par défaut
             }
 
-            $fieldType = $field->type();
+            $fieldType = $field->getType();
             require("templates/Jojotique_Metabox_{$fieldType}.php");
         }
 
