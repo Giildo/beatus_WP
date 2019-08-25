@@ -62,7 +62,6 @@ body {
             list-style: none;
             line-height: 59px;
             z-index: 100;
-            padding: 15px;
 
             &:hover {
               background-color: $orangeLight;
@@ -99,6 +98,7 @@ body {
               li.menu-item {
                 position: relative;
                 line-height: normal;
+                padding: 15px;
 
                 &.menu-item-has-children {
                   &::after {

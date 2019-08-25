@@ -6,25 +6,66 @@
         <nav>
             <div>
                 <h5>L'essentiel du Beatus</h5>
-                <ul>
-                    <li>Les classes </li>
-                </ul>
-            </div>
-        </nav>
+                <?php
+                $college_menu_args = array(
+                    'menu'           => 'MenuFooter_Beatus',
+                    'theme_location' => 'main',
+                    'container'      => 'div',
+                    'menu_id'        => false,
+                    'echo'           => true,
+                    'depth'          => 2
+                );
 
-        <address>
-            <h5>Contact</h5
-            <p>
-                <a href="mailto:ce.0672134f@ac-strasbourg.fr">
-                    ce.0672134f@ac-strasbourg.fr
-                </a>
-            </p>
-            <p>03 90 56 33 30</p>
-            <p>
-                2 boulevard Charlemagne<br/>
-                BP 90176<br/>
-                67600 Sélestat
-            </p>
-        </address>
+                $menu = wp_nav_menu($college_menu_args);
+                ?>
+            </div>
+
+            <div>
+                <h5>Les matières</h5>
+                <?php
+                $college_menu_args = array(
+                    'menu'           => 'MenuFooter_Matieres',
+                    'theme_location' => 'main',
+                    'container'      => 'div',
+                    'menu_id'        => false,
+                    'echo'           => true,
+                    'depth'          => 2
+                );
+
+                $menu = wp_nav_menu($college_menu_args);
+                ?>
+            </div>
+
+            <div>
+                <h5>Les sections</h5>
+                <?php
+                $college_menu_args = array(
+                    'menu'           => 'MenuFooter_Sections',
+                    'theme_location' => 'main',
+                    'container'      => 'div',
+                    'menu_id'        => false,
+                    'echo'           => true,
+                    'depth'          => 2
+                );
+
+                $menu = wp_nav_menu($college_menu_args);
+                ?>
+            </div>
+
+            <address>
+                <h5>Contact</h5
+                <p>
+                    <a href="mailto:ce.0672134f@ac-strasbourg.fr">
+                        ce.0672134f@ac-strasbourg.fr
+                    </a>
+                </p>
+                <p>03 90 56 33 30</p>
+                <p>
+                    2 boulevard Charlemagne<br/>
+                    BP 90176<br/>
+                    67600 Sélestat
+                </p>
+            </address>
+        </nav>
     </div>
 </footer>
