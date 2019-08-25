@@ -24,16 +24,20 @@ body {
             color: $orange;
             margin-bottom: 51px;
           }
+
+          p {
+            text-indent: 30px;
+          }
         }
 
         section:nth-child(2) {
           display: flex;
           justify-content: center;
           position: relative;
+          height: 577px;
 
           div {
             border-radius: 50%;
-            transform: rotate($rotation);
             position: absolute;
           }
 

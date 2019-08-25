@@ -13,13 +13,15 @@ body #container header section#title {
       font-size: 60px;
       color: #CC4500;
       margin-bottom: 51px; }
+    body #container header section#title section:first-child p {
+      text-indent: 30px; }
   body #container header section#title section:nth-child(2) {
     display: flex;
     justify-content: center;
-    position: relative; }
+    position: relative;
+    height: 577px; }
     body #container header section#title section:nth-child(2) div {
       border-radius: 50%;
-      transform: rotate(77.48deg);
       position: absolute; }
     body #container header section#title section:nth-child(2) #orange__circle {
       background-color: #fc9218;
