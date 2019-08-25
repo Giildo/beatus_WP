@@ -2,8 +2,33 @@
 $page = get_post();
 $content = preg_split('/\n/', $page->post_content);
 
-var_dump(get_post(368));
-var_dump(get_the_post_thumbnail_url(368));
+if (get_the_post_thumbnail_url(2721)) {
+    $imageUrl = get_the_post_thumbnail_url(2721);
+    $upe2aSectionHeader = "style=\"background-image: url('{$imageUrl}');";
+    $upe2aSectionHeader .= "background-size: cover;";
+    $upe2aSectionHeader .= "background-position: center;\"";
+}
+
+if (get_the_post_thumbnail_url(44)) {
+    $imageUrl = get_the_post_thumbnail_url(44);
+    $ulisSectionHeader = "style=\"background-image: url('{$imageUrl}');";
+    $ulisSectionHeader .= "background-size: cover;";
+    $ulisSectionHeader .= "background-position: center;\"";
+}
+
+if (get_the_post_thumbnail_url(336)) {
+    $imageUrl = get_the_post_thumbnail_url(336);
+    $asSectionHeader = "style=\"background-image: url('{$imageUrl}');";
+    $asSectionHeader .= "background-size: cover;";
+    $asSectionHeader .= "background-position: center;\"";
+}
+
+if (get_the_post_thumbnail_url(368)) {
+    $imageUrl = get_the_post_thumbnail_url(368);
+    $sssSectionHeader = "style=\"background-image: url('{$imageUrl}');";
+    $sssSectionHeader .= "background-size: cover;";
+    $sssSectionHeader .= "background-position: center;\"";
+}
 ?>
 <header>
     <section id="title">
@@ -25,12 +50,7 @@ var_dump(get_the_post_thumbnail_url(368));
 
 <nav>
     <div>
-        <header style="
-                background-image: url(<?= get_the_post_thumbnail_url(2721);?>);
-                background-size: cover;
-                background-position: center;
-                ">
-        </header>
+        <header <?php if (get_the_post_thumbnail_url(2721)) echo $upe2aSectionHeader; ?>></header>
         <section>
             <h4>UPE2A</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -38,7 +58,7 @@ var_dump(get_the_post_thumbnail_url(368));
         </section>
     </div>
     <div>
-        <header></header>
+        <header <?php if (get_the_post_thumbnail_url(44)) echo $ulisSectionHeader; ?>></header>
         <section>
             <h4>ULIS</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -46,7 +66,7 @@ var_dump(get_the_post_thumbnail_url(368));
         </section>
     </div>
     <div>
-        <header></header>
+        <header <?php if (get_the_post_thumbnail_url(336)) echo $asSectionHeader; ?>></header>
         <section>
             <h4>AS</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
@@ -54,7 +74,7 @@ var_dump(get_the_post_thumbnail_url(368));
         </section>
     </div>
     <div>
-        <header></header>
+        <header <?php if (get_the_post_thumbnail_url(368)) echo $sssSectionHeader; ?>></header>
         <section>
             <h4>3S Football</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
