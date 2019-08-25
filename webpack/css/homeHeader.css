@@ -1,7 +1,6 @@
 body #container header section#title {
   display: grid;
-  grid-template-columns: 6fr 4fr;
-  height: 577px; }
+  grid-template-columns: 6fr 4fr; }
   body #container header section#title section:first-child {
     display: flex;
     flex-direction: column;
@@ -14,12 +13,13 @@ body #container header section#title {
       color: #CC4500;
       margin-bottom: 51px; }
     body #container header section#title section:first-child p {
-      text-indent: 30px; }
+      text-indent: 30px;
+      color: #CC4500; }
   body #container header section#title section:nth-child(2) {
     display: flex;
     justify-content: center;
     position: relative;
-    height: 577px; }
+    height: 100%; }
     body #container header section#title section:nth-child(2) div {
       border-radius: 50%;
       position: absolute;

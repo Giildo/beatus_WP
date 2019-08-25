@@ -9,7 +9,6 @@ body {
       section#title {
         display: grid;
         grid-template-columns: 6fr 4fr;
-        height: 577px;
 
         section:first-child {
           display: flex;
@@ -27,6 +26,7 @@ body {
 
           p {
             text-indent: 30px;
+            color: $orange
           }
         }
 
@@ -34,7 +34,7 @@ body {
           display: flex;
           justify-content: center;
           position: relative;
-          height: 577px;
+          height: 100%;
 
           div {
             border-radius: 50%;
