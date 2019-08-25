@@ -69,3 +69,18 @@
         </nav>
     </div>
 </footer>
+</div>
+
+<script type="text/javascript">
+let coll = document.getElementById('display__filters__button')
+
+coll.addEventListener('click', function () {
+  let content = document.getElementById('post__categories__filters')
+  this.classList.toggle('active')
+
+  content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px'
+})
+</script>
+
+</body>
+</html>

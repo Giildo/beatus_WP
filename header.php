@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Beatus</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/style.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/header.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/homeHeader.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/thumbnails.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/posts.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/slider.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/footer.css'; ?>"/>
+</head>
+
+<body>
+<div id="container">
+
 <header>
     <section>
         <img src="<?= get_template_directory_uri() . '/assets/logo_transparent.png'; ?>"

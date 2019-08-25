@@ -24,17 +24,6 @@ body {
           border-radius: 31px 31px 0 0;
         }
 
-        &:nth-child(1) header {
-          background: {
-            image: url("../assets/thumbnail1.jpeg");
-            position-x: -51px;
-            position-y: -16px;
-            size: 129%;
-            repeat: no-repeat;
-
-          }
-        }
-
         &:nth-child(2) header {
           background: {
             image: url("../assets/thumbnail2.jpeg");
