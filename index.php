@@ -9,6 +9,7 @@
           rel="stylesheet"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/style.css'; ?>"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/header.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/homeHeader.css'; ?>"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/thumbnails.css'; ?>"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/posts.css'; ?>"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/slider.css'; ?>"/>
@@ -19,6 +20,36 @@
 <div id="container">
     <!-- TODO: Faire des fichiers séparés pour les différentes parties du site -->
     <?php get_header(); ?>
+
+    <header>
+        <section id="title">
+            <section>
+                <h1>Bienvenue au collège Beatus Rhenanus</h1>
+
+                <p>
+                    Bonjour et bienvenue sur le site du collège Beatus Rhenanus à Sélestat. Ce site se veut une fenêtre
+                    ouverte sur le collège et son environnement local, afin de partager avec vous la vie qui s’y déroule
+                    chaque jour… Il est celui des élèves et de tous les adultes qui les encadrent et les accompagnent
+                    dans
+                    leur parcours.
+                </p>
+                <p>
+                    Il est le reflet du dynamisme et de l’enthousiasme de tous, de la conviction intrinsèque que
+                    l’éducation
+                    et le savoir mènent à la découverte du monde qui est le nôtre, à la découverte de soi et de l’Autre,
+                    points fondamentaux pour la construction quotidienne de son accomplissement au sein du groupe. En
+                    vous
+                    souhaitant une bonne et agréable visite.
+                </p>
+            </section>
+            <section>
+                <div id="orange__circle"></div>
+                <div id="yellow__circle"></div>
+                <div id="green__circle"></div>
+                <div id="img__circle"></div>
+            </section>
+        </section>
+    </header>
 
     <nav>
         <div>
@@ -180,13 +211,13 @@
 </div>
 
 <script type="text/javascript">
-let coll = document.getElementById('display__filters__button');
+let coll = document.getElementById('display__filters__button')
 
 coll.addEventListener('click', function () {
-  let content = document.getElementById('post__categories__filters');
-  this.classList.toggle('active');
+  let content = document.getElementById('post__categories__filters')
+  this.classList.toggle('active')
 
-  content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px';
+  content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px'
 })
 </script>
 </body>
