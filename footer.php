@@ -1,3 +1,5 @@
+</div>
+
 <footer>
     <div id="footer__container">
         <img src="<?= get_template_directory_uri() . '/assets/logo_transparent.png'; ?>"
@@ -69,7 +71,6 @@
         </nav>
     </div>
 </footer>
-</div>
 
 <script type="text/javascript">
 let coll = document.getElementById('display__filters__button')

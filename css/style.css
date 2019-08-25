@@ -2,8 +2,7 @@ body {
   background: url("../assets/bg.png");
   margin: 0; }
   body #container {
-    margin: 0 150px;
-    height: 100vh; }
+    margin: 0 150px; }
     body #container a, body #container p, body #container h1, body #container h2, body #container h3, body #container h4, body #container h5, body #container h6, body #container div, body #container span, body #container input, body #container textarea, body #container label {
       font-family: "Ubuntu", sans-serif;
       color: #363636; }
