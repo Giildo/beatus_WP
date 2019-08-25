@@ -36,20 +36,15 @@
 
             <p>
                 Bonjour et bienvenue sur le site du collège Beatus Rhenanus à Sélestat. Ce site se veut une fenêtre
-                ouverte
-                sur le collège et son environnement local, afin de partager avec vous la vie qui s’y déroule chaque
-                jour… Il
-                est celui des élèves et de tous les adultes qui les encadrent et les accompagnent dans leur
-                parcours.<br/>
-                <br/>
-                Il est le reflet du dynamisme et de l’enthousiasme de tous, de la conviction intrinsèque que
-                l’éducation et le
-                savoir mènent à la découverte du monde qui est le nôtre, à la découverte de soi et de l’Autre,
-                points
-                fondamentaux pour la construction quotidienne de son accomplissement au sein du groupe. En vous
-                souhaitant une
-                bonne et agréable visite.
-
+                ouverte sur le collège et son environnement local, afin de partager avec vous la vie qui s’y déroule
+                chaque jour… Il est celui des élèves et de tous les adultes qui les encadrent et les accompagnent dans
+                leur parcours.
+            </p>
+            <p>
+                Il est le reflet du dynamisme et de l’enthousiasme de tous, de la conviction intrinsèque que l’éducation
+                et le savoir mènent à la découverte du monde qui est le nôtre, à la découverte de soi et de l’Autre,
+                points fondamentaux pour la construction quotidienne de son accomplissement au sein du groupe. En vous
+                souhaitant une bonne et agréable visite.
             </p>
         </section>
         <section>
