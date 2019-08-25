@@ -69,7 +69,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
         } ?>></header>
         <section>
             <h4>UPE2A</h4>
-            <?= CustomMetaBox::ACFDisplay($page->ID, 'homePageUpe2a') ?>
+            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageUpe2a') ?>
         </section>
     </div>
     <div>
@@ -78,8 +78,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
         } ?>></header>
         <section>
             <h4>ULIS</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
-                sapien laoreet ut. Nulla a sodales enim, in ullamcorper tellus.</p>
+            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageUlis') ?>
         </section>
     </div>
     <div>
@@ -88,8 +87,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
         } ?>></header>
         <section>
             <h4>AS</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
-                sapien laoreet ut. Nulla a sodales enim, in ullamcorper tellus.</p>
+            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePageAS') ?>
         </section>
     </div>
     <div>
@@ -98,8 +96,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
         } ?>></header>
         <section>
             <h4>3S Football</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium libero nisl, non posuere
-                sapien laoreet ut. Nulla a sodales enim, in ullamcorper tellus.</p>
+            <?php CustomMetaBox::ACFDisplay($page->ID, 'homePage3S') ?>
         </section>
     </div>
 </nav>
