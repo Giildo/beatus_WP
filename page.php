@@ -54,7 +54,10 @@ remove_filter('the_excerpt', 'wpautop');
                     <?php endwhile;
                 else:?>
                     <h3>Aucun article dans cette catégorie.</h3>
-                <?php endif; ?>
+                <?php
+                endif;
+                wp_reset_query();
+                ?>
             </aside>
         </nav>
 
@@ -72,4 +75,5 @@ remove_filter('the_excerpt', 'wpautop');
         </section>
     </section>
 
-<?php get_footer();
+<?php
+get_footer();

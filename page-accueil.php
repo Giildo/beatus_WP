@@ -190,7 +190,10 @@ add_filter('excerpt_more', 'newExcerptMore');
             <?php endwhile;
         else:?>
             <h3>Aucun article avec ce filtre.</h3>
-        <?php endif; ?>
+        <?php
+        endif;
+        wp_reset_query();
+        ?>
     </div>
 </section>
 
