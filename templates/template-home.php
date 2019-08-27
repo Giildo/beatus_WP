@@ -106,14 +106,14 @@
             return 20;
         }
 
-        add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
+        add_filter('excerpt_length', 'tnCustomExcerptLength', 999);
 
         function new_excerpt_more($more)
         {
             return '...';
         }
 
-        add_filter('excerpt_more', 'new_excerpt_more');
+        add_filter('excerpt_more', 'newExcerptMore');
         ?>
         <?php
         if ($recentPosts->post_count !== 0) :
