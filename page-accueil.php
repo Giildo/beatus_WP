@@ -17,7 +17,7 @@ function backgroundStyle(string $imageUrl)
     return $style;
 }
 
-$upe2aID = 2721;
+$upe2aID = 272;
 $ulisID = 44;
 $asId = 336;
 $sssId = 368;
@@ -43,14 +43,14 @@ function tn_custom_excerpt_length($length)
     return 20;
 }
 
-add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
+add_filter('excerpt_length', 'tnCustomExcerptLength', 999);
 
 function new_excerpt_more($more)
 {
     return '...';
 }
 
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'newExcerptMore');
 ?>
 <header>
     <section id="title">
@@ -154,8 +154,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
                 'posts_per_page' => 7
             ]
         );
-        ?>
-        <?php
+
         if ($recentPosts->post_count !== 0) :
             while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
                 <div class="post__card">
