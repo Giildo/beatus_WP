@@ -19,6 +19,10 @@ body {
         width: 100%;
         cursor: pointer;
 
+        a {
+          text-decoration: none;
+        }
+
         header {
           height: 152px;
           border-radius: 31px 31px 0 0;

@@ -137,7 +137,7 @@ add_filter('excerpt_more', 'newExcerptMore');
                 <div class="post__category__filter"
                      style="background-color: <?= get_term_meta($category->term_id, 'cc_color',
                                                                 true) ?>">
-                    <a href="<?= get_page_link($homeID) . '?cat=' . $category->slug; ?>">
+                    <a href="<?= add_query_arg(['ch_category' => $category->slug], site_url()); ?>">
                         <?= $category->name; ?>
                     </a>
                 </div>
@@ -150,7 +150,7 @@ add_filter('excerpt_more', 'newExcerptMore');
         $homeID = get_the_ID();
         $recentPosts = new WP_Query(
             [
-                'category_name'  => $_GET['cat'],
+                'category_name'  => $_GET['ch_category'],
                 'posts_per_page' => 7
             ]
         );
@@ -173,7 +173,7 @@ add_filter('excerpt_more', 'newExcerptMore');
                                 <div class="post__card__category_thumbnail"
                                      style="background-color: <?= get_term_meta($cat->term_id, 'cc_color',
                                                                                 true) ?>">
-                                    <a href="<?= get_page_link($homeID) . '?cat=' . $cat->slug; ?>">
+                                    <a href="<?= add_query_arg(['ch_category' => $cat->slug], site_url()); ?>">
                                         <?= $cat->name; ?>
                                     </a>
                                 </div>
