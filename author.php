@@ -28,7 +28,7 @@ $recentPosts = new WP_Query(
 )
 ?>
     <section id="category__section">
-        <h1>Article de <?= $author->display_name; ?></h1>
+        <h1>Articles de <?= $author->display_name; ?></h1>
 
         <section id="posts__cards">
             <?php

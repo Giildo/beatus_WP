@@ -56,6 +56,17 @@ body #post__section {
     margin: 60px 0;
     margin-top: 0;
     text-align: center; }
+  body #post__section section nav {
+    align-items: flex-start; }
+    body #post__section section nav p {
+      display: flex;
+      line-height: 24px;
+      font-size: 14px; }
+      body #post__section section nav p a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none; }
   body #post__section section img {
     width: 100%; }
   body #post__section section p {

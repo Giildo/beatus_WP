@@ -33,6 +33,7 @@ remove_filter('the_excerpt', 'wpautop');
                 if ($recentPosts->post_count !== 0) :
                     while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
                         <h2>Article précédent</h2>
+
                         <a href="<?php the_permalink(); ?>">
                             <div class="post__card">
                                 <header style="
@@ -93,7 +94,17 @@ remove_filter('the_excerpt', 'wpautop');
             );
             if ($recentPosts->post_count !== 0) :
                 while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                    <?php $author = get_user_by('id', $recentPosts->posts[0]->post_author); ?>
                     <h1><?php the_title() ?></h1>
+
+                    <nav>
+                        <p>
+                            <i class="material-icons">insert_invitation</i>&nbsp;&nbsp;<?= the_date(); ?>
+                            <a href="<?= get_site_url() . '/author/' . $author->user_nicename ?>">
+                                <i class="material-icons">person</i>&nbsp;&nbsp;<?= $author->display_name ?>
+                            </a>
+                        </p>
+                    </nav>
 
                     <?php if (get_the_post_thumbnail_url()) : ?>
                         <img src="<?= get_the_post_thumbnail_url() ?>" alt="Photo de couverture de la page.">

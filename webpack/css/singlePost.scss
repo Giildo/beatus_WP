@@ -20,8 +20,7 @@ body {
         margin-top: 0;
       }
 
-      #posts__cards
-      {
+      #posts__cards {
         display: grid;
         grid-template-columns: 1fr;
         grid-row-gap: 10px;
@@ -84,6 +83,23 @@ body {
         @include h2__style;
         margin-top: 0;
         text-align: center;
+      }
+
+      nav {
+        align-items: flex-start;
+
+        p {
+          display: flex;
+          line-height: 24px;
+          font-size: 14px;
+
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+          }
+        }
       }
 
       img {
