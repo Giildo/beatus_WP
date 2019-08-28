@@ -57,7 +57,7 @@ body #page__section {
     margin-top: 0;
     text-align: center; }
   body #page__section section img {
-    width: 100%; }
+    max-width: 100%; }
   body #page__section section p {
     text-indent: 15px;
     padding: 10px; }
