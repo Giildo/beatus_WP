@@ -17,7 +17,7 @@ function backgroundStyle(string $imageUrl)
     return $style;
 }
 
-$upe2aID = 272
+$upe2aID = 272;
 $ulisID = 44;
 $asId = 336;
 $sssId = 368;
@@ -190,7 +190,10 @@ add_filter('excerpt_more', 'newExcerptMore');
             <?php endwhile;
         else:?>
             <h3>Aucun article avec ce filtre.</h3>
-        <?php endif; ?>
+        <?php
+        endif;
+        wp_reset_query();
+        ?>
     </div>
 </section>
 

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/slider.css'; ?>"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/footer.css'; ?>"/>
     <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/singlePage.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/singlePost.css'; ?>"/>
+    <link rel="stylesheet" href="<?= get_template_directory_uri() . '/css/category.css'; ?>"/>
 </head>
 
 <body>
