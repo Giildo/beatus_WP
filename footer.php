@@ -1,6 +1,12 @@
 </div>
 
 <footer>
+    <button id="top__button">
+        <i class="material-icons">
+            keyboard_arrow_up
+        </i>
+    </button>
+
     <div id="footer__container">
         <img src="<?= get_template_directory_uri() . '/assets/logo_transparent.png'; ?>"
              alt="Logo du collège Beatus Rhenanus, avec le nom du collège et différents éléments associés à l'éducation"/>
@@ -75,11 +81,33 @@
 <script type="text/javascript">
 let coll = document.getElementById('display__filters__button')
 
-coll.addEventListener('click', function () {
-  let content = document.getElementById('post__categories__filters')
-  this.classList.toggle('active')
+if (coll !== null) {
+  coll.addEventListener('click', function () {
+    let content = document.getElementById('post__categories__filters')
+    this.classList.toggle('active')
 
-  content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px'
+    content.style.maxHeight ? content.style.maxHeight = null : content.style.maxHeight = content.scrollHeight + 'px'
+  })
+}
+
+let scrollPosition = window.scrollY
+let topButton = document.getElementById('top__button')
+
+window.addEventListener('scroll', () => {
+  window.scrollY !== 0 ? topButton.style.display = 'block' : topButton.style.display = 'none'
+})
+
+function scrollToTop (scrollDuration) {
+  let scrollStep = -window.scrollY / (scrollDuration / 15),
+    scrollInterval = setInterval(() => {
+      window.scrollY !== 0 ? window.scrollBy(0, scrollStep) : clearInterval(scrollInterval)
+    }, 15)
+}
+
+topButton.addEventListener('click', (event) => {
+  event.stopPropagation()
+
+  scrollToTop(200)
 })
 </script>
 

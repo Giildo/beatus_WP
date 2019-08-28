@@ -2,6 +2,38 @@
 
 footer {
   border-top: 1px solid $blackGrey;
+  position: relative;
+
+  #top__button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    background-color: $orange;
+    color: white;
+    border-radius: 4px;
+    box-sizing: content-box;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    outline: none;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: box-shadow 100ms ease-in-out, background-color 100ms ease-in-out;
+
+    &:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 6px 7px 0 rgba(0, 0, 0, 0.14),
+    0 3px 12px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    &:active {
+      background-color: $orangeLight;
+    }
+  }
 
   #footer__container {
     margin: 20px 150px;

@@ -6,7 +6,7 @@ body #container #slider__section {
   body #container #slider__section h2 {
     font-weight: bold;
     font-size: 48px;
-    color: #CC4500;
+    color: #cc4500;
     margin: 60px 0; }
   body #container #slider__section #slider__card #slider {
     display: grid;

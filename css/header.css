@@ -1,6 +1,6 @@
 body #container header section:first-child {
   padding: 13px 0;
-  color: #CC4500;
+  color: #cc4500;
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -18,12 +18,12 @@ body #container header section:first-child {
       font-style: normal;
       font-size: 12px;
       text-decoration: none;
-      color: #CC4500; }
+      color: #cc4500; }
       body #container header section:first-child address span i.material-icons, body #container header section:first-child address a i.material-icons {
         font-size: 12px; }
 body #container header nav {
   height: 60px;
-  background-color: #CC4500;
+  background-color: #cc4500;
   margin: 0 -150px;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ body #container header nav {
         padding: 0;
         flex-direction: column;
         position: absolute;
-        background-color: #CC4500;
+        background-color: #cc4500;
         display: none;
         width: auto; }
         body #container header nav ul li.menu-item ul.sub-menu li.menu-item {

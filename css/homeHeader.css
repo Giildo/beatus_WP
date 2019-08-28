@@ -10,11 +10,11 @@ body #container header section#title {
     body #container header section#title section:first-child h1 {
       font-weight: bold;
       font-size: 60px;
-      color: #CC4500;
+      color: #cc4500;
       margin-bottom: 51px; }
     body #container header section#title section:first-child p {
       text-indent: 30px;
-      color: #CC4500; }
+      color: #cc4500; }
   body #container header section#title section:nth-child(2) {
     display: flex;
     justify-content: center;

@@ -6,7 +6,7 @@ body #container #posts {
     top: 7px;
     border: none;
     font-size: 14px;
-    color: #CC4500;
+    color: #cc4500;
     padding: 10px 21px 10px 10px;
     cursor: pointer;
     background-color: transparent;
@@ -39,7 +39,7 @@ body #container #posts {
   body #container #posts header h2 {
     font-weight: bold;
     font-size: 48px;
-    color: #CC4500;
+    color: #cc4500;
     margin: 60px 0;
     border-bottom: 0; }
   body #container #posts header #post__categories__filters {
