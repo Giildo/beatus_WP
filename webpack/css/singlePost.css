@@ -61,12 +61,14 @@ body #post__section {
     body #post__section section nav p {
       display: flex;
       line-height: 24px;
-      font-size: 14px; }
+      font-size: 14px;
+      color: #676767; }
       body #post__section section nav p a {
         display: flex;
         justify-content: center;
         align-items: center;
-        text-decoration: none; }
+        text-decoration: none;
+        color: #676767; }
   body #post__section section img {
     max-width: 100%; }
   body #post__section section p {
