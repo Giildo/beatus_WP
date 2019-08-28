@@ -17,7 +17,7 @@ function backgroundStyle(string $imageUrl)
     return $style;
 }
 
-$upe2aID = 272;
+$upe2aID = 2721;
 $ulisID = 44;
 $asId = 336;
 $sssId = 368;
@@ -38,14 +38,14 @@ if (get_the_post_thumbnail_url($sssId)) {
     $sssSectionHeader = backgroundStyle(get_the_post_thumbnail_url($sssId));
 }
 
-function tn_custom_excerpt_length($length)
+function tnCustomExcerptLength($length)
 {
     return 20;
 }
 
 add_filter('excerpt_length', 'tnCustomExcerptLength', 999);
 
-function new_excerpt_more($more)
+function newExcerptMore($more)
 {
     return '...';
 }
@@ -73,7 +73,7 @@ add_filter('excerpt_more', 'newExcerptMore');
 <nav>
     <div>
         <a href="<?= get_permalink($upe2aID); ?>">
-            <header <?php if (get_the_post_thumbnail_url(2721)) {
+            <header <?php if (get_the_post_thumbnail_url($upe2aID)) {
                 echo $upe2aSectionHeader;
             } ?>></header>
             <section>
@@ -84,7 +84,7 @@ add_filter('excerpt_more', 'newExcerptMore');
     </div>
     <div>
         <a href="<?= get_permalink($ulisID); ?>">
-            <header <?php if (get_the_post_thumbnail_url(44)) {
+            <header <?php if (get_the_post_thumbnail_url($ulisID)) {
                 echo $ulisSectionHeader;
             } ?>></header>
             <section>
@@ -95,7 +95,7 @@ add_filter('excerpt_more', 'newExcerptMore');
     </div>
     <div>
         <a href="<?= get_permalink($asId); ?>">
-            <header <?php if (get_the_post_thumbnail_url(336)) {
+            <header <?php if (get_the_post_thumbnail_url($asId)) {
                 echo $asSectionHeader;
             } ?>></header>
             <section>
@@ -106,7 +106,7 @@ add_filter('excerpt_more', 'newExcerptMore');
     </div>
     <div>
         <a href="<?= get_permalink($sssId); ?>">
-            <header <?php if (get_the_post_thumbnail_url(368)) {
+            <header <?php if (get_the_post_thumbnail_url($sssId)) {
                 echo $sssSectionHeader;
             } ?>></header>
             <section>
