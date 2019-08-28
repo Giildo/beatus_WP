@@ -68,7 +68,7 @@ body #post__section {
         align-items: center;
         text-decoration: none; }
   body #post__section section img {
-    width: 100%; }
+    max-width: 100%; }
   body #post__section section p {
     text-indent: 15px;
     padding: 10px; }
