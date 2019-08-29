@@ -1,6 +1,7 @@
 <?php get_header();
 $page = get_post();
 $content = preg_split('/\n/', $page->post_content);
+$paged = $_GET['ch_page'] ?: 1;
 
 /**
  * Permet de créer le style pour les vignettes des sections.
@@ -118,11 +119,21 @@ add_filter('excerpt_more', 'newExcerptMore');
 </nav>
 
 <section id="posts">
-    <button id="display__filters__button">
-        Filtrer
-        <i id="filter__icon__tune" class="material-icons">tune</i>
-        <i id="filter__icon__clear" class="material-icons">clear</i>
-    </button>
+    <div id="div__navigation__buttons">
+        <div>
+            <a href="<?= add_query_arg(['ch_page' => ($paged - 1)], site_url()); ?>">
+                <button><i class="material-icons">navigate_before</i></button>
+            </a>
+            <a href="<?= add_query_arg(['ch_page' => ($paged + 1)], site_url()); ?>">
+                <button><i class="material-icons">navigate_next</i></button>
+            </a>
+        </div>
+        <button id="display__filters__button">
+            Filtrer
+            <i id="filter__icon__tune" class="material-icons">tune</i>
+            <i id="filter__icon__clear" class="material-icons">clear</i>
+        </button>
+    </div>
     <header>
         <h2>Quoi de neuf au collège ?</h2>
 
@@ -151,7 +162,8 @@ add_filter('excerpt_more', 'newExcerptMore');
         $recentPosts = new WP_Query(
             [
                 'category_name'  => $_GET['ch_category'],
-                'posts_per_page' => 7
+                'posts_per_page' => 7,
+                'paged'          => $paged
             ]
         );
 
